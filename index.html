@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio Pandu Rachmawan - IT Engineer, Network Specialist, Web Developer">
+    <meta name="keywords" content="Pandu Rachmawan, IT Engineer, Networking, Web Developer, pndrtech">
+    <title>pndrtech | Pandu Rachmawan - IT Engineer & Web Developer</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        'primary': '#0ea5e9',
+                        'secondary': '#6366f1',
+                        'dark': '#0f172a',
+                        'darker': '#020617',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-darker text-white font-poppins overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-darker/80 backdrop-blur-lg border-b border-white/10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-bold">
+                    <span class="text-primary">pndr</span><span class="text-white">tech</span>
+                    <span class="text-xs text-gray-400 ml-2">™</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <ul class="hidden md:flex space-x-8">
+                    <li><a href="#home" class="nav-link hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="#about" class="nav-link hover:text-primary transition-colors">About</a></li>
+                    <li><a href="#experience" class="nav-link hover:text-primary transition-colors">Experience</a></li>
+                    <li><a href="#education" class="nav-link hover:text-primary transition-colors">Education</a></li>
+                    <li><a href="#skills" class="nav-link hover:text-primary transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="nav-link hover:text-primary transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="nav-link hover:text-primary transition-colors">Contact</a></li>
+                </ul>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <ul id="mobile-menu" class="hidden md:hidden mt-4 space-y-4 pb-4">
+                <li><a href="#home" class="block hover:text-primary transition-colors">Home</a></li>
+                <li><a href="#about" class="block hover:text-primary transition-colors">About</a></li>
+                <li><a href="#experience" class="block hover:text-primary transition-colors">Experience</a></li>
+                <li><a href="#education" class="block hover:text-primary transition-colors">Education</a></li>
+                <li><a href="#skills" class="block hover:text-primary transition-colors">Skills</a></li>
+                <li><a href="#projects" class="block hover:text-primary transition-colors">Projects</a></li>
+                <li><a href="#contact" class="block hover:text-primary transition-colors">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <!-- Animated Background -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
+            <div class="absolute top-40 right-10 w-72 h-72 bg-secondary/20 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: 2s;"></div>
+            <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-xl animate-float" style="animation-delay: 4s;"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in">
+                    <p class="text-primary font-mono text-lg mb-4">&lt;hello world /&gt;</p>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                        Saya <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Pandu</span>
+                        <br>Rachmawan
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6">
+                        <span id="typed-text"></span><span class="animate-pulse">|</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        IT Engineer & Web Developer berbasis di Bogor, Jawa Barat. Berpengalaman dalam Network Engineering, Hardware Maintenance, dan Web Development dengan passion untuk menciptakan solusi teknologi yang inovatif.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Hubungi Saya
+                        </a>
+                        <a href="#projects" class="px-8 py-3 border-2 border-primary rounded-full font-semibold hover:bg-primary/10 transition-all">
+                            <i class="fas fa-code mr-2"></i>Lihat Project
+                        </a>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mt-8">
+                        <a href="https://www.linkedin.com/in/pandu-rachmawan-35796a146" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://www.pndrweb.co.id" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fas fa-globe text-xl"></i>
+                        </a>
+                        <a href="mailto:pandurachmawan@gmail.com" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="https://wa.me/6289605345747" target="_blank" class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image Placeholder -->
+                <div class="hidden md:flex justify-center animate-slide-up">
+                    <div class="relative">
+                        <div class="w-80 h-80 bg-gradient-to-br from-primary to-secondary rounded-full animate-glow"></div>
+                        <div class="absolute inset-4 bg-darker rounded-full flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-user-tie text-6xl text-primary mb-4"></i>
+                                <p class="font-mono text-sm text-gray-400">pndrtech</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-primary text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;about /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Tentang <span class="text-primary">Saya</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">IT Engineer & Educator</h3>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Saya adalah seorang profesional IT dengan pengalaman lebih dari 10 tahun di bidang
+                        <span class="text-primary">Network Engineering</span>,
+                        <span class="text-primary">Hardware Maintenance</span>, dan
+                        <span class="text-primary">Web Development</span>.
+                    </p>
+                    <p class="text-gray-400 mb-4 leading-relaxed">
+                        Saat ini saya bekerja sebagai IT Support dan Guru Produktif TKJ di SMK Bhakti Insani Bogor, sekaligus mengelola project freelance sebagai web developer. Saya memiliki passion dalam mengajar dan berbagi ilmu teknologi kepada generasi muda.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed">
+                        Dengan latar belakang Teknik Informatika dari STIKOM Bina Niaga Bogor (Cum Laude), saya terus mengembangkan keahlian di bidang cybersecurity, networking, dan software development.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-4 mt-8">
+                        <div class="text-center p-4 bg-white/5 rounded-lg">
+                            <h4 class="text-3xl font-bold text-primary">10+</h4>
+                            <p class="text-sm text-gray-400">Tahun Pengalaman</p>
+                        </div>
+                        <div class="text-center p-4 bg-white/5 rounded-lg">
+                            <h4 class="text-3xl font-bold text-primary">50+</h4>
+                            <p class="text-sm text-gray-400">Project Selesai</p>
+                        </div>
+                        <div class="text-center p-4 bg-white/5 rounded-lg">
+                            <h4 class="text-3xl font-bold text-primary">100+</h4>
+                            <p class="text-sm text-gray-400">Siswa Dibimbing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="space-y-4">
+                    <div class="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl border border-primary/20 hover:border-primary/50 transition-all">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Lokasi</h4>
+                                <p class="text-gray-400">Bogor, Kota Bogor, Jawa Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl border border-primary/20 hover:border-primary/50 transition-all">
+                        <div class="flex items-start">
+                            <i class="fas fa-briefcase text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Profesi</h4>
+                                <p class="text-gray-400">IT Support & Guru Produktif TKJ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl border border-primary/20 hover:border-primary/50 transition-all">
+                        <div class="flex items-start">
+                            <i class="fas fa-graduation-cap text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Pendidikan</h4>
+                                <p class="text-gray-400">S1 Teknik Informatika - Cum Laude</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl border border-primary/20 hover:border-primary/50 transition-all">
+                        <div class="flex items-start">
+                            <i class="fas fa-language text-primary text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">Bahasa</h4>
+                                <p class="text-gray-400">Indonesia (Native), English (Intermediate)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-dark/50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;experience /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Pengalaman <span class="text-primary">Profesional</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary transform md:-translate-x-1/2"></div>
+
+                <!-- Experience Item 1 -->
+                <div class="relative mb-12 md:mb-16">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12 md:text-right">
+                            <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
+                                <span class="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-mono mb-3">Dec 2014 - Present</span>
+                                <h3 class="text-xl font-bold mb-2">IT Support & Guru Produktif TKJ</h3>
+                                <p class="text-primary mb-3">SMK Bhakti Insani - Bogor</p>
+                                <ul class="text-gray-400 text-sm space-y-2">
+                                    <li><i class="fas fa-check text-primary mr-2"></i>Memelihara dan memastikan semua komputer user berfungsi optimal</li>
+                                    <li><i class="fas fa-check text-primary mr-2"></i>Mengelola jaringan komputer sekolah</li>
+                                    <li><i class="fas fa-check text-primary mr-2"></i>Installasi dan konfigurasi antivirus & sistem keamanan</li>
+                                    <li><i class="fas fa-check text-primary mr-2"></i>Backup data dan update sistem berkala</li>
+                                    <li><i class="fas fa-check text-primary mr-2"></i>Mengajar mata pelajaran produktif TKJ</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-primary rounded-full border-4 border-darker transform md:-translate-x-1/2 -translate-x-1/2 mt-8"></div>
+                        <div class="md:w-1/2 md:pl-12"></div>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative mb-12 md:mb-16">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-12"></div>
+                        <div class="absolute left-0 md:left-1/2 w-6 h-6 bg-secondary rounded-full border-4 border-darker transform md:-translate-x-1/2 -translate-x-1/2 mt-8"></div>
+                        <div class="md:w-1/2 md:pl-12">
+                            <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-secondary/50 transition-all">
+                                <span class="inline-block px-3 py-1 bg-secondary/20 text-secondary rounded-full text-sm font-mono mb-3">May 2014 - Jun 2014</span>
+                                <h3 class="text-xl font-bold mb-2">Marketing</h3>
+                                <p class="text-secondary mb-3">PT. MNC Sky Vision Tbk - Bogor</p>
+                                <ul class="text-gray-400 text-sm space-y-2">
+                                    <li><i class="fas fa-check text-secondary mr-2"></i>Mencapai 150+ target penjualan dalam 1 bulan</li>
+                                    <li><i class="fas fa-check text-secondary mr-2"></i>Mendapatkan Marketing Award</li>
+                                    <li><i class="fas fa-check text-secondary mr-2"></i>Implementasi marketing promotion via social media</li>
+                                    <li><i class="fas fa-check text-secondary mr-2"></i>Door-to-door survey dan event promotion</li>
+                                    <li><i class="fas fa-check text-secondary mr-2"></i>Membuat laporan penjualan menggunakan Microsoft Office</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;education /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Pendidikan & <span class="text-primary">Sertifikasi</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="p-8 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Bachelor of Teknik Informatika</h3>
+                            <p class="text-gray-400">STIKOM Bina Niaga Bogor</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 text-gray-400">
+                        <p><i class="fas fa-calendar text-primary mr-2"></i>May 2015 - Mar 2020 (4 Tahun)</p>
+                        <p><i class="fas fa-star text-primary mr-2"></i>IPK: <span class="text-white font-bold">3.29/4.00</span> - <span class="text-primary">Cum Laude</span></p>
+                        <p><i class="fas fa-book text-primary mr-2"></i>Skripsi: Penerapan Algoritma RSA dalam Keamanan Transfer File Server</p>
+                        <p><i class="fas fa-award text-primary mr-2"></i>Asisten Praktikum Jaringan Komputer & Server Database</p>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="space-y-4">
+                    <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-network-wired text-primary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold">Cisco Packet Tracer CCNA 1</h4>
+                                <p class="text-sm text-gray-400">Networking Certification - 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-database text-secondary"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold">Oracle System</h4>
+                                <p class="text-sm text-gray-400">Database Certification - 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-microsoft text-purple-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold">Microsoft Office</h4>
+                                <p class="text-sm text-gray-400">Kampus UIQA Workshop - 2013</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-primary/50 transition-all">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-briefcase text-green-400"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold">Administration Training</h4>
+                                <p class="text-sm text-gray-400">Magang IPB - 2012</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark/50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;skills /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Keahlian <span class="text-primary">Teknis</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Frontend -->
+                <div class="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-primary/50 transition-all">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Frontend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">HTML5</span>
+                                <span class="text-primary">90%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">CSS3 / Tailwind</span>
+                                <span class="text-primary">85%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">JavaScript</span>
+                                <span class="text-primary">80%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">React.js / Vue.js</span>
+                                <span class="text-primary">75%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-secondary/50 transition-all">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-secondary to-purple-500 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-server text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Backend</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">PHP / Laravel</span>
+                                <span class="text-secondary">85%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Node.js / Express</span>
+                                <span class="text-secondary">80%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">MySQL</span>
+                                <span class="text-secondary">85%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">API Development</span>
+                                <span class="text-secondary">75%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-secondary to-purple-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT & Networking -->
+                <div class="p-8 bg-white/5 rounded-2xl border border-white/10 hover:border-green-500/50 transition-all">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-teal-500 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-network-wired text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">IT & Networking</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">MikroTik RouterOS</span>
+                                <span class="text-green-400">90%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-teal-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Hardware Maintenance</span>
+                                <span class="text-green-400">95%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-teal-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Network Security</span>
+                                <span class="text-green-400">85%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-teal-500 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-gray-300">Server Administration</span>
+                                <span class="text-green-400">80%</span>
+                            </div>
+                            <div class="w-full bg-white/10 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-teal-500 h-2 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center mb-8">Tools & Technologies</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fab fa-git-alt text-2xl text-orange-500 mr-2"></i>Git
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fab fa-github text-2xl mr-2"></i>GitHub
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fas fa-code text-2xl text-blue-400 mr-2"></i>VS Code
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fab fa-linux text-2xl text-yellow-400 mr-2"></i>Linux
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fas fa-terminal text-2xl text-green-400 mr-2"></i>Bash
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fab fa-docker text-2xl text-blue-500 mr-2"></i>Docker
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fas fa-shield-alt text-2xl text-red-400 mr-2"></i>Kali Linux
+                    </div>
+                    <div class="px-6 py-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/50 transition-all">
+                        <i class="fas fa-network-wired text-2xl text-primary mr-2"></i>Cisco
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;projects /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Project <span class="text-primary">Terbaru</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                        <i class="fas fa-globe text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">IT System Engineering</h3>
+                            <span class="px-2 py-1 bg-primary/20 text-primary rounded text-xs">2018</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Pengembangan sistem website berbasis desktop untuk manajemen IT infrastructure dengan fitur monitoring dan reporting.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">PHP</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">MySQL</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-primary hover:text-primary/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-secondary/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-secondary to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">RSA File Security</h3>
+                            <span class="px-2 py-1 bg-secondary/20 text-secondary rounded text-xs">2020</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Implementasi algoritma RSA untuk keamanan transfer file server di lembaga pendidikan. Meningkatkan keamanan jaringan dari 0 hingga 100%.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Cryptography</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Python</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Security</span>
+                        </div>
+                        <a href="#" class="text-secondary hover:text-secondary/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-green-500/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center">
+                        <i class="fas fa-network-wired text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Network Infrastructure</h3>
+                            <span class="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs">2023</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Perancangan dan implementasi jaringan komputer sekolah dengan MikroTik RouterOS, termasuk VLAN, firewall, dan bandwidth management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">MikroTik</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Cisco</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Networking</span>
+                        </div>
+                        <a href="#" class="text-green-400 hover:text-green-400/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-orange-500/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                        <i class="fas fa-chalkboard-teacher text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">E-Learning Platform</h3>
+                            <span class="px-2 py-1 bg-orange-500/20 text-orange-400 rounded text-xs">2022</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Platform pembelajaran online untuk siswa SMK dengan fitur video conference, quiz interaktif, dan manajemen tugas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Laravel</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Vue.js</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">MySQL</span>
+                        </div>
+                        <a href="#" class="text-orange-400 hover:text-orange-400/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-pink-500/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center">
+                        <i class="fas fa-desktop text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Desktop App System</h3>
+                            <span class="px-2 py-1 bg-pink-500/20 text-pink-400 rounded text-xs">2021</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Aplikasi desktop untuk manajemen inventaris perangkat IT dengan fitur tracking, maintenance scheduling, dan reporting.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Electron</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">SQLite</span>
+                        </div>
+                        <a href="#" class="text-pink-400 hover:text-pink-400/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500/50 transition-all">
+                    <div class="h-48 bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center">
+                        <i class="fas fa-users text-6xl text-white/80 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold">Community Management</h3>
+                            <span class="px-2 py-1 bg-cyan-500/20 text-cyan-400 rounded text-xs">2019</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4">
+                            Sistem manajemen komunitas Bimapala dengan fitur event management, member registration, dan activity tracking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">PHP</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">Bootstrap</span>
+                            <span class="px-2 py-1 bg-white/10 rounded text-xs">jQuery</span>
+                        </div>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-400/80 transition-colors">
+                            Lihat Detail <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Organization Section -->
+    <section class="py-20 bg-dark/50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;organization /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Organisasi & <span class="text-primary">Kegiatan</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="p-8 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-2xl border border-primary/20">
+                    <div class="flex items-start mb-6">
+                        <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-mountain text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Bimapala - Cianjur</h3>
+                            <p class="text-primary mb-2">Pengurus | Mar 2017 - Jul 2019</p>
+                            <p class="text-gray-400">
+                                Organisasi pecinta alam dan kegiatan outdoor. Aktif dalam berbagai kegiatan seperti bakti sosial, caving, dan event kampus.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-4 mt-6">
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <i class="fas fa-hands-helping text-primary text-2xl mb-2"></i>
+                            <h4 class="font-bold mb-1">Bakti Sosial</h4>
+                            <p class="text-sm text-gray-400">Kegiatan sosial kemanusiaan</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <i class="fas fa-users text-secondary text-2xl mb-2"></i>
+                            <h4 class="font-bold mb-1">Event Silaturahmi</h4>
+                            <p class="text-sm text-gray-400">Antar alumni dan member</p>
+                        </div>
+                        <div class="p-4 bg-white/5 rounded-lg">
+                            <i class="fas fa-chalkboard text-green-400 text-2xl mb-2"></i>
+                            <h4 class="font-bold mb-1">Workshop & Seminar</h4>
+                            <p class="text-sm text-gray-400">Event kampus dan pelatihan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-primary font-mono mb-2">&lt;contact /&gt;</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Mari <span class="text-primary">Berkolaborasi</span></h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-6 max-w-2xl mx-auto">
+                    Tertarik untuk bekerja sama atau memiliki project menarik? Jangan ragu untuk menghubungi saya. Saya selalu terbuka untuk diskusi dan kolaborasi baru.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Informasi Kontak</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Email</p>
+                                <a href="mailto:pandurachmawan@gmail.com" class="font-semibold hover:text-primary transition-colors">
+                                    pandurachmawan@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-whatsapp text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">WhatsApp</p>
+                                <a href="https://wa.me/6289605345747" class="font-semibold hover:text-green-400 transition-colors">
+                                    +62 896-0534-5747
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fab fa-linkedin-in text-blue-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/pandu-rachmawan-35796a146" target="_blank" class="font-semibold hover:text-blue-400 transition-colors">
+                                    Pandu Rachmawan
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-globe text-secondary"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Website</p>
+                                <a href="https://www.pndrweb.co.id" target="_blank" class="font-semibold hover:text-secondary transition-colors">
+                                    www.pndrweb.co.id
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all">
+                            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-red-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-400">Lokasi</p>
+                                <p class="font-semibold">Bogor, Kota Bogor, Jawa Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Kirim Pesan</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Nama Lengkap</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary focus:outline-none transition-colors" placeholder="Masukkan nama Anda">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Email</label>
+                            <input type="email" name="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary focus:outline-none transition-colors" placeholder="email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Subjek</label>
+                            <input type="text" name="subject" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary focus:outline-none transition-colors" placeholder="Subjek pesan">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-gray-400 mb-2">Pesan</label>
+                            <textarea name="message" rows="5" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none" placeholder="Tulis pesan Anda..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-3 bg-gradient-to-r from-primary to-secondary rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-105">
+                            <i class="fas fa-paper-plane mr-2"></i>Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-dark/80 border-t border-white/10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="text-primary">pndr</span><span class="text-white">tech</span>
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        IT Engineer & Web Developer berbasis di Bogor, Jawa Barat. Menciptakan solusi teknologi inovatif untuk masa depan yang lebih baik.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/pandu-rachmawan-35796a146" target="_blank" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.pndrweb.co.id" target="_blank" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <a href="mailto:pandurachmawan@gmail.com" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://wa.me/6289605345747" target="_blank" class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary/20 hover:text-primary transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Web Development</li>
+                        <li>Network Engineering</li>
+                        <li>IT Consulting</li>
+                        <li>Hardware Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 <span class="text-primary">pndrtech</span>. All rights reserved. Built with <i class="fas fa-heart text-red-500"></i> by Pandu Rachmawan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center shadow-lg hover:shadow-primary/50 transition-all transform hover:scale-110 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
